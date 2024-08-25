@@ -1,0 +1,25 @@
+## Please check .eslintignore and .gitignore when changing this file
+
+## file extensions
+*.*
+!*.css
+!*.js
+!*.jsx
+!*.less
+!*.mdx
+!*.ts
+!*.tsx
+!*.json
+
+/node_modules
+
+# production
+/build
+.env
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.envrc
