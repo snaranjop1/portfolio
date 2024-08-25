@@ -13,6 +13,7 @@ export function TopProject({ name, description, url, github, type }: TopProjectP
     <div className='border shadow-sm rounded-md p-4 flex flex-col gap-4 lg:items-center lg:flex-row lg:justify-between'>
       <div>
         <a
+          target='_blank'
           href={url ?? github ?? '#'}
           className='font-semibold items-center hover:cursor-pointer hover:underline hover:text-primary-500'
         >
