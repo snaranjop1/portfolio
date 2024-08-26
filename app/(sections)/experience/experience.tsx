@@ -27,12 +27,7 @@ export function Experience() {
   return (
     <Box
       className='col-span-4 flex flex-col'
-      icon={
-        <BriefcaseBusiness
-          size={16}
-          color='gray'
-        />
-      }
+      icon='BriefcaseBusiness'
     >
       <div className='flex-grow flex flex-col gap-8 lg:justify-between'>
         <div>

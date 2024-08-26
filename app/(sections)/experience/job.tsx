@@ -15,8 +15,8 @@ export function Job({ current = false, name, dates }: JobProps) {
           </span>
         ) : (
           <span className='relative flex h-2 w-2 items-center justify-center'>
-            <span className='absolute inline-flex rounded-full h-4 w-4 bg-gray-400 opacity-25'></span>
-            <span className='relative inline-flex rounded-full h-2 w-2 bg-gray-400 border-3 border-red'></span>
+            <span className='absolute inline-flex rounded-full h-4 w-4 bg-neutral-300 opacity-25'></span>
+            <span className='relative inline-flex rounded-full h-2 w-2 bg-neutral-300 border-3 border-red'></span>
           </span>
         )}
         {name}

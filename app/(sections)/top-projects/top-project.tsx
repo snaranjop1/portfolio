@@ -15,19 +15,18 @@ export function TopProject({ name, description, url, github, type }: TopProjectP
         <a
           target='_blank'
           href={url ?? github ?? '#'}
-          className='font-semibold items-center hover:cursor-pointer hover:underline hover:text-primary-500'
+          className='font-semibold items-center hover:cursor-pointer underline hover:text-primary-500'
         >
           {name}
         </a>
-        <p className={`${type === 'work' ? 'text-secondary-500' : 'text-primary-500'} text-xs`}>
-          {type === 'work' ? 'Work' : 'Personal'}
-        </p>
-        <p className='text-sm'>{description}</p>
+        <p className='text-sm font-light'>{description}</p>
+        <p className='text-xs font-thin'>{type === 'personal' ? 'Personal' : 'Work'}</p>
       </div>
       <div className='flex gap-2'>
         {url && (
           <a
             href={url}
+            aria-label='Visit project'
             target='_blank'
           >
             <ExternalLink
@@ -39,6 +38,7 @@ export function TopProject({ name, description, url, github, type }: TopProjectP
         {github && (
           <a
             href={github}
+            aria-label='Visit project repository'
             target='_blank'
           >
             <Github

@@ -23,7 +23,7 @@ export default function Home() {
         <TechStack />
       </main>
       <footer className='mt-10'>
-        <p className='text-sm text-center text-gray-500'>
+        <p className='text-sm text-center text-neutral-400'>
           naranhack &copy; {new Date().getFullYear()}
         </p>
       </footer>

@@ -30,12 +30,7 @@ export function Contact() {
   return (
     <Box
       className='col-span-2'
-      icon={
-        <Contact2
-          size={16}
-          color='gray'
-        />
-      }
+      icon='Contact'
     >
       <h2 className='text-lg font-bold'>Contact & Media</h2>
       <p className='font-light text-sm'>Feel free to check my social media and contact me</p>
@@ -45,7 +40,7 @@ export function Contact() {
             key={name}
             href={url}
             target='_blank'
-            className='font-semibold underline underline-offset-4 hover:text-primary-500 flex gap-2 items-center'
+            className='font-semibold underline underline-offset-4 hover:text-primary-500 flex gap-2 items-center w-fit'
           >
             {name}{' '}
             <ExternalLink
