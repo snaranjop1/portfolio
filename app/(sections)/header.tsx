@@ -1,9 +1,4 @@
-'use client';
-
 import Image from 'next/image';
-import { toast } from 'sonner';
-
-import { EMAIL } from '@/constants';
 
 export function Header() {
   return (
@@ -15,20 +10,12 @@ export function Header() {
         alt='avatar of Sergio Naranjo'
         className='rounded-full w-24 h-24 shadow-lg border-4 border-solid border-white bg-primary-500'
       />
-      <h1 className='text-lg max-w-[500px] font-semibold text-center lg:text-left'>
-        Hey! I&apos;m Sergio Naranjo. Check out my work, and if anything catches your eye,
-        don&apos;t hesitate to{' '}
-        <span
-          className='underline underline-offset-2 hover:text-primary-500 hover:cursor-pointer'
-          onClick={() => {
-            navigator.clipboard.writeText(EMAIL);
-            toast.success('Email copied to clipboard!');
-          }}
-        >
-          get in touch
-        </span>
-        .
-      </h1>
+      <div>
+        <h1 className='text-3xl font-extrabold text-center lg:text-left'>
+          Hello there! I&apos;m Sergio Naranjo
+        </h1>
+        <h2 className='text-2xl font-medium text-center lg:text-left mt-1'>Frontend Developer</h2>
+      </div>
     </header>
   );
 }

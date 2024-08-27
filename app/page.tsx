@@ -11,19 +11,19 @@ export default function Home() {
     <div className='p-10 max-w-screen-lg m-auto'>
       <Header />
       <main className='flex flex-col gap-4'>
-        <section className='flex flex-col gap-4 lg:grid lg:grid-cols-4 lg:grid-rows-4 lg:gap-4'>
+        <div className='flex flex-col gap-4 lg:grid lg:grid-cols-4 lg:grid-rows-4 lg:gap-4'>
           <Bio />
           <Presentation />
           <TopProjects />
-        </section>
-        <section className='flex flex-col gap-4 lg:grid lg:grid-cols-6 lg:grid-rows-1 lg:gap-4'>
+        </div>
+        <div className='flex flex-col gap-4 lg:grid lg:grid-cols-6 lg:grid-rows-1 lg:gap-4'>
           <Experience />
           <Contact />
-        </section>
+        </div>
         <TechStack />
       </main>
       <footer className='mt-10'>
-        <p className='text-sm text-center text-neutral-400'>
+        <p className='text-sm text-center text-neutral-500'>
           naranhack &copy; {new Date().getFullYear()}
         </p>
       </footer>

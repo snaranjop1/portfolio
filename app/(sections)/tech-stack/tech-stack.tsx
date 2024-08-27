@@ -3,6 +3,7 @@ import { Box } from '@components/box';
 import {
   FigmaIcon,
   FirebaseIcon,
+  JavascriptIcon,
   NextIcon,
   ReactIcon,
   ReduxIcon,
@@ -14,6 +15,16 @@ import { Tech } from './tech';
 
 export function TechStack() {
   const techStack = [
+    {
+      name: 'JavaScript',
+      description: 'Language',
+      icon: (
+        <JavascriptIcon
+          width={35}
+          height={35}
+        />
+      ),
+    },
     {
       name: 'React',
       description: 'Library',

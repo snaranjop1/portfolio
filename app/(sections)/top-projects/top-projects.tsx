@@ -1,5 +1,3 @@
-import { Code } from 'lucide-react';
-
 import { Box } from '@components/box';
 
 import { TopProject } from './top-project';
@@ -13,15 +11,15 @@ export function TopProjects() {
       type: 'personal',
     },
     {
+      name: 'DataScope',
+      description: 'Full frontend migration from Ruby on Rails views to React + MUI + Firebase',
+      url: 'https://datascope.io',
+      type: 'work',
+    },
+    {
       name: 'Impostor Syndrome',
       description: 'Overview of impostor syndrome worldwide',
       type: 'personal',
-    },
-    {
-      name: 'DataScope',
-      description: 'Full React migration from Ruby on Rails',
-      url: 'https://datascope.io',
-      type: 'work',
     },
   ];
   return (

@@ -1,5 +1,3 @@
-import { BriefcaseBusiness } from 'lucide-react';
-
 import { Box } from '@components/box';
 
 import { Job } from './job';

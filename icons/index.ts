@@ -6,3 +6,4 @@ export { NextIcon } from './next';
 export { TailwindIcon } from './tailwind';
 export { ReduxIcon } from './redux';
 export { SupabaseIcon } from './supabase';
+export { JavascriptIcon } from './javascript';

@@ -6,7 +6,7 @@ export function Presentation() {
   return (
     <Box className='col-span-2 row-span-2 col-start-1 row-start-3'>
       <p>
-        Currently, I work as Front-End Developer at{' '}
+        Currently, I work as Senior Frontend Developer at{' '}
         <span className='border shadow-sm px-[4px] rounded-md inline-flex items-center text-sm gap-1'>
           <DatascopeIcon
             width={14}
