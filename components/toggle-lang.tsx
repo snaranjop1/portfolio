@@ -5,7 +5,6 @@ import { Link } from '@/i18n/routing';
 
 export function ToggleLang() {
   const locale = useLocale();
-  const nextLocale = locale === 'en' ? 'es' : 'en';
 
   return (
     <Button
@@ -16,9 +15,9 @@ export function ToggleLang() {
     >
       <Link
         href='/'
-        locale={nextLocale}
+        locale={locale}
       >
-        <span className='font-semibold text-lg'>{nextLocale.toUpperCase()}</span>
+        <span className='font-semibold text-lg'>{locale.toUpperCase()}</span>
       </Link>
     </Button>
   );

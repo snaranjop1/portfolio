@@ -38,7 +38,7 @@ export function Contact() {
         <p
           onClick={() => {
             navigator.clipboard.writeText(EMAIL);
-            toast.success('Email copied to clipboard!');
+            toast.success(t('emailCopied'));
           }}
           className='font-semibold underline underline-offset-4 hover:text-primary flex gap-2 items-center w-fit cursor-pointer'
         >

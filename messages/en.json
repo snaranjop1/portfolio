@@ -39,7 +39,8 @@
   "contact": {
     "title": "Contact & Media",
     "description": "Feel free to check my social media and contact me",
-    "resume": "CV"
+    "resume": "CV",
+    "emailCopied": "Email copied to clipboard!"
   },
   "techStack": {
     "title": "Tech Stack",

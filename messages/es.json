@@ -39,7 +39,8 @@
   "contact": {
     "title": "Contacto & Media",
     "description": "Revisa mis redes sociales y contactame",
-    "resume": "Currículum"
+    "resume": "Currículum",
+    "emailCopied": "Email copiado al portapapeles!"
   },
   "techStack": {
     "title": "Stack tecnológico",
