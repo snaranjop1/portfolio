@@ -1,0 +1,53 @@
+{
+  "header": {
+    "title": "Hola! Soy Sergio Naranjo",
+    "subtitle": "Desarrollador Frontend"
+  },
+  "bio": {
+    "description": "Un poco sobre mí",
+    "role": "Desarrollador Frontend Senior",
+    "experience": "{years}+ años de experiencia",
+    "location": "Medellín, Colombia 🇨🇴",
+    "age": "{age} años"
+  },
+  "presentation": {
+    "part1": "Actualmente trabajo como Desarrollador Frontend Senior en",
+    "part2": "enfocándome en",
+    "part3": "y",
+    "part4": "para construir interfaces de usuario amigables y de alto rendimiento. En mi tiempo libre, me gusta ver anime y leer cómics, asistir/ver partidos de fútbol, y pasar mucho tiempo jugando con mis perros."
+  },
+  "topProjects": {
+    "title": "Mi trabajo",
+    "description": "Los proyectos de los que estoy más orgulloso",
+    "job": "Proyectos profesionales",
+    "personal": "Personal",
+    "project1": {
+      "description": "Migración completa del frontend de vistas en Ruby on Rails a React + React Query + MUI + Firebase"
+    },
+    "project2": {
+      "description": "Aplicación web pequeña integrada con IA para generar mensajes o respuestas aptas para el trabajo"
+    },
+    "project3": {
+      "description": "Herramienta de análisis financiero con IA para PYMES"
+    }
+  },
+  "experience": {
+    "title": "Experiencia",
+    "description": "Mi camino profesional a través de los años",
+    "current": "Actual"
+  },
+  "contact": {
+    "title": "Contacto & Media",
+    "description": "Revisa mis redes sociales y contactame",
+    "resume": "Currículum"
+  },
+  "techStack": {
+    "title": "Stack tecnológico",
+    "description": "Todas las herramientas y tecnologías que uso para construir cosas increíbles",
+    "library": "Librería",
+    "language": "Lenguaje",
+    "framework": "Framework",
+    "baas": "BaaS",
+    "design": "Diseño"
+  }
+}

@@ -1,39 +1,62 @@
-import { Box } from '@components/box';
+import { useTranslations } from 'next-intl';
 
+import { Box } from '@/components/box';
+import { Badge } from '@/components/ui/badge';
 import { DatascopeIcon, FirebaseIcon, ReactIcon } from '@/icons';
+import { ReactQueryIcon } from '@/icons/react-query';
 
 export function Presentation() {
+  const t = useTranslations('presentation');
   return (
-    <Box className='col-span-2 row-span-2 col-start-1 row-start-3'>
-      <p>
-        Currently, I work as Senior Frontend Developer at{' '}
-        <span className='border shadow-sm px-[4px] rounded-md inline-flex items-center text-sm gap-1'>
+    <Box className='md:col-span-2 md:row-span-2 md:col-start-3 md:row-start-1 lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-3'>
+      <div className='text-normal'>
+        {`${t('part1')} `}
+        <Badge
+          variant='outline'
+          className='inline-flex items-center gap-2 text-sm'
+        >
           <DatascopeIcon
             width={14}
             height={14}
           />
           DataScope
-        </span>
+        </Badge>
         {', '}
-        focusing on{' '}
-        <span className='border shadow-sm px-[4px] rounded-md inline-flex items-center text-sm gap-1'>
+        {`${t('part2')} `}
+        <Badge
+          variant='outline'
+          className='inline-flex items-center gap-2 text-sm'
+        >
           <ReactIcon
             width={14}
             height={14}
           />
           React
-        </span>{' '}
-        and{' '}
-        <span className='border shadow-sm px-[4px] rounded-md inline-flex items-center text-sm gap-1'>
+        </Badge>
+        ,
+        <Badge
+          variant='outline'
+          className='inline-flex items-center gap-2 text-sm'
+        >
+          <ReactQueryIcon
+            width={14}
+            height={14}
+          />
+          React Query
+        </Badge>
+        {` ${t('part3')} `}
+        <Badge
+          variant='outline'
+          className='inline-flex items-center gap-2 text-sm'
+        >
           <FirebaseIcon
             width={14}
             height={14}
           />
           Firebase
-        </span>{' '}
-        to build user-friendly interfaces. In my spare time, I dive into anime and comics, catch
-        soccer games, and spend plenty of time playing with my dogs.
-      </p>
+        </Badge>
+        {` ${t('part4')}`}
+      </div>
     </Box>
   );
 }

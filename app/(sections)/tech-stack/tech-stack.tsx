@@ -1,5 +1,6 @@
-import { Box } from '@components/box';
+import { useTranslations } from 'next-intl';
 
+import { Box } from '@/components/box';
 import {
   FigmaIcon,
   FirebaseIcon,
@@ -10,14 +11,18 @@ import {
   SupabaseIcon,
   TailwindIcon,
 } from '@/icons';
+import { ReactQueryIcon } from '@/icons/react-query';
+import { ZustandIcon } from '@/icons/zustand';
 
 import { Tech } from './tech';
 
 export function TechStack() {
+  const t = useTranslations('techStack');
+
   const techStack = [
     {
       name: 'JavaScript',
-      description: 'Language',
+      description: t('language'),
       icon: (
         <JavascriptIcon
           width={35}
@@ -27,7 +32,7 @@ export function TechStack() {
     },
     {
       name: 'React',
-      description: 'Library',
+      description: t('library'),
       icon: (
         <ReactIcon
           width={35}
@@ -37,7 +42,7 @@ export function TechStack() {
     },
     {
       name: 'Next.js',
-      description: 'Framework',
+      description: t('framework'),
       icon: (
         <NextIcon
           width={35}
@@ -47,7 +52,7 @@ export function TechStack() {
     },
     {
       name: 'TailwindCSS',
-      description: 'Framework',
+      description: t('framework'),
       icon: (
         <TailwindIcon
           width={35}
@@ -56,8 +61,28 @@ export function TechStack() {
       ),
     },
     {
+      name: 'Zustand',
+      description: t('library'),
+      icon: (
+        <ZustandIcon
+          width={35}
+          height={35}
+        />
+      ),
+    },
+    {
+      name: 'React Query',
+      description: t('library'),
+      icon: (
+        <ReactQueryIcon
+          width={35}
+          height={35}
+        />
+      ),
+    },
+    {
       name: 'Redux',
-      description: 'Tool',
+      description: t('library'),
       icon: (
         <ReduxIcon
           width={35}
@@ -67,7 +92,7 @@ export function TechStack() {
     },
     {
       name: 'Firebase',
-      description: 'BaaS',
+      description: t('baas'),
       icon: (
         <FirebaseIcon
           width={35}
@@ -77,7 +102,7 @@ export function TechStack() {
     },
     {
       name: 'Supabase',
-      description: 'BaaS',
+      description: t('baas'),
       icon: (
         <SupabaseIcon
           width={35}
@@ -87,7 +112,7 @@ export function TechStack() {
     },
     {
       name: 'Figma',
-      description: 'Design',
+      description: t('design'),
       icon: (
         <FigmaIcon
           width={35}
@@ -97,9 +122,11 @@ export function TechStack() {
     },
   ];
   return (
-    <Box className='col-span-6 row-span-2 row-start-8'>
-      <h2 className='text-lg font-bold'>Tech Stack</h2>
-      <p className='font-light text-sm mb-6'>All the tools I use to build amazing things</p>
+    <Box
+      className='col-span-6 row-span-2 row-start-8'
+      title={t('title')}
+      description={t('description')}
+    >
       <div className='flex gap-8 flex-wrap'>
         {techStack.map((tech) => (
           <Tech

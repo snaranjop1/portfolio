@@ -1,8 +1,11 @@
-import { Box } from '@components/box';
+import { useTranslations } from 'next-intl';
+
+import { Box } from '@/components/box';
 
 import { Job } from './job';
 
 export function Experience() {
+  const t = useTranslations('experience');
   const jobs = [
     {
       name: 'DataScope',
@@ -24,14 +27,12 @@ export function Experience() {
   ];
   return (
     <Box
-      className='col-span-4 flex flex-col'
+      className='md:col-span-2 lg:col-span-4'
       icon='BriefcaseBusiness'
+      title={t('title')}
+      description={t('description')}
     >
-      <div className='flex-grow flex flex-col gap-8 lg:justify-between'>
-        <div>
-          <h2 className='text-lg font-bold'>Experience</h2>
-          <p className='font-light text-sm'>My profesional journey through the years</p>
-        </div>
+      <div className='flex-grow'>
         <div className='flex flex-col gap-4'>
           {jobs.map((job) => (
             <Job

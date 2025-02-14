@@ -8,25 +8,20 @@ import { TopProjects } from '@sections/top-projects/top-projects';
 
 export default function Home() {
   return (
-    <div className='p-10 max-w-screen-lg m-auto'>
+    <>
       <Header />
       <main className='flex flex-col gap-4'>
-        <div className='flex flex-col gap-4 lg:grid lg:grid-cols-4 lg:grid-rows-4 lg:gap-4'>
+        <div className='flex flex-col gap-4 md:grid lg:grid-cols-4 lg:grid-rows-4'>
           <Bio />
           <Presentation />
           <TopProjects />
         </div>
-        <div className='flex flex-col gap-4 lg:grid lg:grid-cols-6 lg:grid-rows-1 lg:gap-4'>
+        <div className='flex flex-col gap-4 md:grid md:grid-cols-4 md:grid-rows-1 lg:grid lg:grid-cols-6 lg:grid-rows-1'>
           <Experience />
           <Contact />
         </div>
         <TechStack />
       </main>
-      <footer className='mt-10'>
-        <p className='text-sm text-center text-neutral-500'>
-          naranhack &copy; {new Date().getFullYear()}
-        </p>
-      </footer>
-    </div>
+    </>
   );
 }

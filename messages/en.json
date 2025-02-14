@@ -1,0 +1,53 @@
+{
+  "header": {
+    "title": "Hello there! I'm Sergio Naranjo",
+    "subtitle": "Frontend Developer"
+  },
+  "bio": {
+    "description": "A little about me",
+    "role": "Senior Frontend Developer",
+    "experience": "{years}+ years of experience",
+    "location": "Medellín, Colombia 🇨🇴",
+    "age": "{age} years old"
+  },
+  "presentation": {
+    "part1": "Currently, I work as Senior Frontend Developer at",
+    "part2": "focusing on",
+    "part3": "and",
+    "part4": "to build user-friendly and high performance interfaces. In my spare time, I like to dive into anime and comics, catch soccer games, and spend plenty of time playing with my dogs."
+  },
+  "topProjects": {
+    "title": "Top Projects",
+    "description": "The work I'm proudest of",
+    "job": "Job",
+    "personal": "Personal",
+    "project1": {
+      "description": "Full frontend migration from Ruby on Rails views to React + React Query + MUI + Firebase"
+    },
+    "project2": {
+      "description": "Small web app integrated with AI to generate safe for work messages or responses"
+    },
+    "project3": {
+      "description": "Financial AI analysis tool for pymes"
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "description": "My profesional journey through the years",
+    "current": "Current"
+  },
+  "contact": {
+    "title": "Contact & Media",
+    "description": "Feel free to check my social media and contact me",
+    "resume": "CV"
+  },
+  "techStack": {
+    "title": "Tech Stack",
+    "description": "All the tools and technologies I use to build amazing things",
+    "library": "Library",
+    "language": "Language",
+    "framework": "Framework",
+    "baas": "BaaS",
+    "design": "Design"
+  }
+}
