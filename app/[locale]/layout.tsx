@@ -5,6 +5,7 @@ import { Inconsolata } from 'next/font/google';
 import { Toaster } from 'sonner';
 
 import { ThemeProvider } from '@/components/theme-provider';
+import { ToggleLang } from '@/components/toggle-lang';
 import { ToggleTheme } from '@/components/toggle-theme';
 
 import '../globals.css';
@@ -38,7 +39,10 @@ export default async function RootLayout({
             disableTransitionOnChange
           >
             <div className='p-10 max-w-screen-lg container mx-auto flex flex-col'>
-              <ToggleTheme />
+              <div className='flex gap-2 self-end'>
+                <ToggleLang />
+                <ToggleTheme />
+              </div>
               {children}
               <footer className='mt-10'>
                 <p className='text-sm text-center text-muted-foreground'>
