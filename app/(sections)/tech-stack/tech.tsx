@@ -1,3 +1,5 @@
+import { Badge } from '@/components/ui/badge';
+
 interface TechProps {
   icon: React.ReactNode;
   name: string;
@@ -13,7 +15,12 @@ export function Tech({ icon, name, description }: TechProps) {
         </div>
         <div>
           <h3 className='font-semibold'>{name}</h3>
-          <p className='text-xs font-thin'>{description}</p>
+          <Badge
+            className='text-xs px-1 py-0.5'
+            variant='secondary'
+          >
+            {description}
+          </Badge>
         </div>
       </div>
     </>

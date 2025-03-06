@@ -13,7 +13,7 @@ interface BoxProps {
 export function Box({ className, children, icon, title, description }: BoxProps) {
   const IconComponent: LucideIcon | null = icon ? icons[icon] : null;
   return (
-    <Card className={`${className ?? ''} p-4`}>
+    <Card className={`${className ?? ''} p-4 shadow-lg`}>
       <CardHeader className='mb-1 space-y-0 pb-4'>
         {IconComponent && (
           <div className='p-2 mb-4 border w-fit shadow-sm rounded-lg text-muted-foreground'>
@@ -22,10 +22,10 @@ export function Box({ className, children, icon, title, description }: BoxProps)
         )}
         {title && <CardTitle className='text-lg font-bold'>{title}</CardTitle>}
         {description && (
-          <CardDescription className='font-light text-sm'>{description}</CardDescription>
+          <CardDescription className='font-normal text-sm'>{description}</CardDescription>
         )}
       </CardHeader>
-      <CardContent>{children}</CardContent>
+      <CardContent className='font-medium'>{children}</CardContent>
     </Card>
   );
 }

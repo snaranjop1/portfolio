@@ -10,7 +10,7 @@ export function Experience() {
     {
       name: 'DataScope',
       current: true,
-      dates: 'Aug 2023 - Present',
+      dates: `Mar 2023 - ${t('current')}`,
     },
     {
       name: 'HelloBUILD',

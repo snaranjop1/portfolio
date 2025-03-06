@@ -38,7 +38,7 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <div className='p-10 max-w-screen-lg container mx-auto flex flex-col'>
+            <div className='p-5 md:p-10 max-w-screen-lg container mx-auto flex flex-col'>
               <div className='flex gap-2 self-end'>
                 <ToggleLang />
                 <ToggleTheme />

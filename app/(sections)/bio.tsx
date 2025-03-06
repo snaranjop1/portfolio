@@ -12,14 +12,14 @@ export function Bio() {
       description={t('description')}
     >
       <ul className='list-disc list-inside'>
-        <li className='font-light'>{t('role')}</li>
-        <li className='font-light'>
+        <li>{t('role')}</li>
+        <li>
           {t('experience', {
             years: new Date().getFullYear() - new Date('01-01-2020').getFullYear(),
           })}
         </li>
-        <li className='font-light'>{t('location')}</li>
-        <li className='font-light'>
+        <li>{t('location')}</li>
+        <li>
           {t('age', { age: new Date().getFullYear() - new Date('04-14-1999').getFullYear() })}
         </li>
       </ul>

@@ -1,5 +1,3 @@
-import { useTranslations } from 'next-intl';
-
 interface JobProps {
   current?: boolean;
   name: string;
@@ -7,7 +5,6 @@ interface JobProps {
 }
 
 export function Job({ current = false, name, dates }: JobProps) {
-  const t = useTranslations('experience');
   return (
     <div className='flex flex-col lg:flex-row lg:justify-between'>
       <h3 className='flex items-center gap-2 lg:gap-4'>
@@ -24,7 +21,7 @@ export function Job({ current = false, name, dates }: JobProps) {
         )}
         {name}
       </h3>
-      <p className='text-sm'>{current ? t('current') : dates}</p>
+      <p className='text-sm'>{dates}</p>
     </div>
   );
 }
