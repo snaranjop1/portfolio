@@ -11,7 +11,7 @@
     "age": "{age} years old"
   },
   "presentation": {
-    "text": "Currently, I work as Senior Frontend Developer at <companylink>{company}</companylink> focusing on the continuous improvement of the user experience using <techlink>{tech}</techlink>, to build user-friendly and high performance interfaces. In my spare time, I like to dive into anime and comics, catch soccer games, and spend plenty of time playing with <dogs>my dogs</dogs>."
+    "text": "Currently, I work as Senior Frontend Developer at <companylink>{company}</companylink> focusing on the continuous improvement of the user experience using {tech}, to build user-friendly and high performance interfaces. In my spare time, I like to dive into anime and comics, catch soccer games, and spend plenty of time playing with <dogs>my dogs</dogs>."
   },
   "topProjects": {
     "title": "Top Projects",
@@ -22,7 +22,7 @@
       "description": "Full frontend migration from Ruby on Rails views to React + React Query + MUI + Firebase"
     },
     "project2": {
-      "description": "Small web app integrated with AI to generate safe for work messages or responses"
+      "description": "A minimal invoicing tool that provides a sleek and intuitive interface for creating professional invoices."
     },
     "project3": {
       "description": "Financial AI analysis tool for pymes"

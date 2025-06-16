@@ -3,7 +3,6 @@ import Image from 'next/image';
 
 import { Box } from '@/components/box';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { DatascopeIcon, ReactIcon } from '@/icons';
 
 export function Presentation() {
   const t = useTranslations('presentation');
@@ -11,31 +10,18 @@ export function Presentation() {
     <Box className='md:col-span-2 md:row-span-2 md:col-start-3 md:row-start-1 lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-3'>
       <div className='mt-[-20px] leading-relaxed'>
         {t.rich('text', {
-          company: 'DataScope',
+          company: 'YipitData',
           companylink: (chunks) => (
             <a
-              href='https://datascope.io'
+              href='https://yipitdata.com'
               target='_blank'
               rel='noopener noreferrer'
               className='inline-flex items-center gap-2 hover:scale-[1.01] duration-100 hover:text-primary'
             >
-              <DatascopeIcon
-                width={14}
-                height={14}
-              />
               {chunks}
             </a>
           ),
-          tech: 'React',
-          techlink: (chunks) => (
-            <span className='inline-flex items-center gap-2'>
-              <ReactIcon
-                width={14}
-                height={14}
-              />
-              {chunks}
-            </span>
-          ),
+          tech: 'React + MUI + Plotly Dash',
           dogs: (chunks) => (
             <TooltipProvider>
               <Tooltip delayDuration={200}>
@@ -50,7 +36,7 @@ export function Presentation() {
                     alt='Dogs'
                     width={200}
                     height={150}
-                    className='rounded-md border-2 border-muted-foreground object-center object-cover'
+                    className='rounded-md border border-muted shadow-sm object-center object-cover'
                   />
                 </TooltipContent>
               </Tooltip>

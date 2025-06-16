@@ -11,7 +11,7 @@
     "age": "{age} años"
   },
   "presentation": {
-    "text": "Actualmente trabajo como Desarrollador Frontend Senior en <companylink>{company}</companylink> enfocándome en la mejora continua de la experiencia de usuario utilizando <techlink>{tech}</techlink> para construir interfaces de usuario amigables y de alto rendimiento. En mi tiempo libre, me gusta ver anime y leer cómics, jugar/ver partidos de fútbol, y pasar mucho tiempo jugando con <dogs>mis perros</dogs>."
+    "text": "Actualmente trabajo como Desarrollador Frontend Senior en <companylink>{company}</companylink> enfocándome en la mejora continua de la experiencia de usuario utilizando {tech} para construir interfaces de usuario amigables y de alto rendimiento. En mi tiempo libre, me gusta ver anime y leer cómics, jugar/ver partidos de fútbol, y pasar mucho tiempo jugando con <dogs>mis perros</dogs>."
   },
   "topProjects": {
     "title": "Mi trabajo",
@@ -22,7 +22,7 @@
       "description": "Migración completa del frontend de vistas en Ruby on Rails a React + React Query + MUI + Firebase"
     },
     "project2": {
-      "description": "Aplicación web pequeña integrada con IA para generar mensajes o respuestas aptas para el trabajo"
+      "description": "Una herramienta de facturación minimalista con una interfaz elegante y intuitiva para crear cuentas de cobro profesionales."
     },
     "project3": {
       "description": "Herramienta de análisis financiero con IA para PYMES"

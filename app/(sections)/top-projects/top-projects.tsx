@@ -14,9 +14,9 @@ export function TopProjects() {
       type: 'work',
     },
     {
-      name: 'Safe for work',
+      name: 'Cóbralo',
       description: t('project2.description'),
-      url: 'https://safeforworkia.com',
+      url: 'https://cobralo.vercel.app/',
       type: 'personal',
     },
     {

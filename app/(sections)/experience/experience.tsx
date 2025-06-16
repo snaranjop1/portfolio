@@ -8,9 +8,13 @@ export function Experience() {
   const t = useTranslations('experience');
   const jobs = [
     {
-      name: 'DataScope',
+      name: 'YipitData',
       current: true,
-      dates: `Mar 2023 - ${t('current')}`,
+      dates: `Jun 2025 - ${t('current')}`,
+    },
+    {
+      name: 'DataScope',
+      dates: `Mar 2023 - Jun 2025`,
     },
     {
       name: 'HelloBUILD',
