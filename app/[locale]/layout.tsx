@@ -7,6 +7,7 @@ import { Toaster } from 'sonner';
 import { ThemeProvider } from '@/components/theme-provider';
 import { ToggleLang } from '@/components/toggle-lang';
 import { ToggleTheme } from '@/components/toggle-theme';
+import { Button } from '@/components/ui/button';
 
 import '../globals.css';
 
@@ -46,7 +47,20 @@ export default async function RootLayout({
               {children}
               <footer className='mt-10'>
                 <p className='text-sm text-center text-muted-foreground'>
-                  naranhack &copy; {new Date().getFullYear()}
+                  With ❤️ by{' '}
+                  <Button
+                    variant='link'
+                    asChild
+                    className='p-0 text-sm text-orange-400 hover:text-orange-500'
+                  >
+                    <a
+                      href='https://github.com/snaranjop1'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      @naranhack
+                    </a>
+                  </Button>
                 </p>
               </footer>
             </div>

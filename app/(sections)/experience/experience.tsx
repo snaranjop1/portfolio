@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 import { Box } from '@/components/box';
 
@@ -6,27 +6,33 @@ import { Job } from './job';
 
 export function Experience() {
   const t = useTranslations('experience');
+  const locale = useLocale();
+
+  const formatDate = (date: Date) => {
+    return new Intl.DateTimeFormat(locale, { month: 'short', year: 'numeric' }).format(date);
+  };
+
   const jobs = [
     {
       name: 'YipitData',
       current: true,
-      dates: `Jun 2025 - ${t('current')}`,
+      dates: `${formatDate(new Date('05/01/2025'))} - ${t('current')}`,
     },
     {
       name: 'DataScope',
-      dates: `Mar 2023 - Jun 2025`,
+      dates: `${formatDate(new Date('03/31/2023'))} - ${formatDate(new Date('06/30/2025'))}`,
     },
     {
       name: 'HelloBUILD',
-      dates: 'Aug 2022 - Mar 2023',
+      dates: `${formatDate(new Date('08/01/2022'))} - ${formatDate(new Date('03/31/2023'))}`,
     },
     {
       name: 'Appspring Technologies',
-      dates: 'Feb 2021 - May 2022',
+      dates: `${formatDate(new Date('02/01/2021'))} - ${formatDate(new Date('05/31/2022'))}`,
     },
     {
       name: 'ACI Worldwide',
-      dates: 'Jan 2020 - Dec 2020',
+      dates: `${formatDate(new Date('01/01/2020'))} - ${formatDate(new Date('12/31/2020'))}`,
     },
   ];
   return (
