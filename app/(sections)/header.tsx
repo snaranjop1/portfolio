@@ -1,8 +1,6 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
-import { Badge } from '@/components/ui/badge';
-
 export function Header() {
   const t = useTranslations('header');
   return (
@@ -16,9 +14,9 @@ export function Header() {
       />
       <div className='flex flex-col items-center lg:items-start'>
         <h1 className='text-3xl font-extrabold text-center lg:text-left'>{t('title')}</h1>
-        <Badge className='text-2xl font-medium text-center lg:text-left mt-1 w-fit'>
+        <h2 className='text-2xl font-bold text-center lg:text-left mt-1 w-fit text-primary'>
           {t('subtitle')}
-        </Badge>
+        </h2>
       </div>
     </header>
   );

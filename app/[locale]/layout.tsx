@@ -47,7 +47,7 @@ export default async function RootLayout({
               {children}
               <footer className='mt-10'>
                 <p className='text-sm text-center text-muted-foreground'>
-                  With ❤️ by{' '}
+                  Made with ❤️ by{' '}
                   <Button
                     variant='link'
                     asChild
