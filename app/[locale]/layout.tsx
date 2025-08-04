@@ -51,7 +51,7 @@ export default async function RootLayout({
                   <Button
                     variant='link'
                     asChild
-                    className='p-0 text-sm text-orange-400 hover:text-orange-500'
+                    className='p-0 text-sm text-primary'
                   >
                     <a
                       href='https://github.com/snaranjop1'
