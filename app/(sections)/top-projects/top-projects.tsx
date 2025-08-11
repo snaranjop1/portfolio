@@ -19,11 +19,6 @@ export function TopProjects() {
       url: 'https://cobralo.vercel.app/',
       type: 'personal',
     },
-    {
-      name: 'Alcatraz',
-      description: t('project3.description'),
-      type: 'personal',
-    },
   ];
   return (
     <Box
