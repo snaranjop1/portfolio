@@ -1,6 +1,13 @@
 import { useTranslations } from 'next-intl';
 
 import { Box } from '@/components/box';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 
 import { TopProject } from './top-project';
 
@@ -12,12 +19,14 @@ export function TopProjects() {
       description: t('project1.description'),
       url: 'https://datascope.io',
       type: 'work',
+      imageSrc: '/datascope-screenshot.png',
     },
     {
       name: 'Cóbralo',
       description: t('project2.description'),
       url: 'https://cobralo.vercel.app/',
       type: 'personal',
+      imageSrc: '/cobralo-screenshot.png',
     },
     {
       name: 'Gol Data',
@@ -25,6 +34,7 @@ export function TopProjects() {
       url: 'https://gol-data.vercel.app/',
       type: 'personal',
       isInProgress: true,
+      imageSrc: '/gol-data-screenshot.png',
     },
   ];
   return (
@@ -34,14 +44,29 @@ export function TopProjects() {
       title={t('title')}
       description={t('description')}
     >
-      <div className='flex flex-col gap-4'>
-        {topProyects.map((project) => (
-          <TopProject
-            key={project.name}
-            {...project}
-          />
-        ))}
-      </div>
+      <Carousel
+        opts={{
+          align: 'start',
+        }}
+        orientation='vertical'
+        className='w-full my-14'
+      >
+        <CarouselContent className='-mt-1 h-[300px] md:h-[350px] lg:h-[300px]'>
+          {topProyects.map((project) => (
+            <CarouselItem
+              key={project.name}
+              className='pt-1 md:basis-1/2'
+            >
+              <TopProject
+                key={project.name}
+                {...project}
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
     </Box>
   );
 }

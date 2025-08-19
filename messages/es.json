@@ -42,11 +42,6 @@
   },
   "techStack": {
     "title": "Stack tecnológico",
-    "description": "Todas las herramientas y tecnologías que uso para construir cosas increíbles",
-    "library": "Librería",
-    "language": "Lenguaje",
-    "framework": "Framework",
-    "baas": "BaaS",
-    "design": "Diseño"
+    "description": "Todas las herramientas y tecnologías que uso para construir cosas increíbles"
   }
 }

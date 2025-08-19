@@ -2,14 +2,20 @@ import { useTranslations } from 'next-intl';
 
 import { Box } from '@/components/box';
 import {
+  CssIcon,
   FigmaIcon,
   FirebaseIcon,
+  HtmlIcon,
   JavascriptIcon,
+  MaterialUiIcon,
   NextIcon,
+  NodejsIcon,
   ReactIcon,
   ReduxIcon,
+  ShadcnIcon,
   SupabaseIcon,
   TailwindIcon,
+  TypescriptIcon,
 } from '@/icons';
 import { ReactQueryIcon } from '@/icons/react-query';
 import { ZustandIcon } from '@/icons/zustand';
@@ -21,102 +27,146 @@ export function TechStack() {
 
   const techStack = [
     {
+      name: 'HTML',
+      icon: (
+        <HtmlIcon
+          width={12}
+          height={12}
+        />
+      ),
+    },
+    {
+      name: 'CSS',
+      icon: (
+        <CssIcon
+          width={12}
+          height={12}
+        />
+      ),
+    },
+    {
       name: 'JavaScript',
-      description: t('language'),
       icon: (
         <JavascriptIcon
-          width={35}
-          height={35}
+          width={12}
+          height={12}
+        />
+      ),
+    },
+    {
+      name: 'TypeScript',
+      icon: (
+        <TypescriptIcon
+          width={12}
+          height={12}
         />
       ),
     },
     {
       name: 'React',
-      description: t('library'),
       icon: (
         <ReactIcon
-          width={35}
-          height={35}
+          width={12}
+          height={12}
         />
       ),
     },
     {
       name: 'Next.js',
-      description: t('framework'),
       icon: (
         <NextIcon
-          width={35}
-          height={35}
+          width={12}
+          height={12}
         />
       ),
     },
     {
       name: 'TailwindCSS',
-      description: t('framework'),
       icon: (
         <TailwindIcon
-          width={35}
-          height={35}
+          width={12}
+          height={12}
         />
       ),
     },
     {
       name: 'Zustand',
-      description: t('library'),
       icon: (
         <ZustandIcon
-          width={35}
-          height={35}
+          width={12}
+          height={12}
         />
       ),
     },
     {
       name: 'React Query',
-      description: t('library'),
       icon: (
         <ReactQueryIcon
-          width={35}
-          height={35}
+          width={12}
+          height={12}
         />
       ),
     },
     {
       name: 'Redux',
-      description: t('library'),
       icon: (
         <ReduxIcon
-          width={35}
-          height={35}
+          width={12}
+          height={12}
+        />
+      ),
+    },
+    {
+      name: 'Shadcn',
+      icon: (
+        <ShadcnIcon
+          width={12}
+          height={12}
+        />
+      ),
+    },
+    {
+      name: 'Material UI',
+      icon: (
+        <MaterialUiIcon
+          width={12}
+          height={12}
         />
       ),
     },
     {
       name: 'Firebase',
-      description: t('baas'),
       icon: (
         <FirebaseIcon
-          width={35}
-          height={35}
+          width={12}
+          height={12}
         />
       ),
     },
     {
       name: 'Supabase',
-      description: t('baas'),
       icon: (
         <SupabaseIcon
-          width={35}
-          height={35}
+          width={12}
+          height={12}
+        />
+      ),
+    },
+    {
+      name: 'Node.js',
+      icon: (
+        <NodejsIcon
+          width={12}
+          height={12}
         />
       ),
     },
     {
       name: 'Figma',
-      description: t('design'),
       icon: (
         <FigmaIcon
-          width={35}
-          height={35}
+          width={12}
+          height={12}
         />
       ),
     },
@@ -127,7 +177,7 @@ export function TechStack() {
       title={t('title')}
       description={t('description')}
     >
-      <div className='flex gap-8 flex-wrap'>
+      <div className='flex gap-3 flex-wrap'>
         {techStack.map((tech) => (
           <Tech
             key={tech.name}
