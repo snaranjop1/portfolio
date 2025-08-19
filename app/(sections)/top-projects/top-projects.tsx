@@ -19,6 +19,13 @@ export function TopProjects() {
       url: 'https://cobralo.vercel.app/',
       type: 'personal',
     },
+    {
+      name: 'Gol Data',
+      description: t('project3.description'),
+      url: 'https://gol-data.vercel.app/',
+      type: 'personal',
+      isInProgress: true,
+    },
   ];
   return (
     <Box

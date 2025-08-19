@@ -18,6 +18,7 @@
     "description": "Los proyectos de los que estoy más orgulloso",
     "job": "Proyectos profesionales",
     "personal": "Personal",
+    "inProgress": "En Construcción",
     "project1": {
       "description": "Migración completa del frontend de vistas en Ruby on Rails a React + React Query + MUI + Firebase"
     },
@@ -25,7 +26,7 @@
       "description": "Una herramienta de facturación minimalista con una interfaz elegante y intuitiva para crear cuentas de cobro profesionales."
     },
     "project3": {
-      "description": "Herramienta de análisis financiero con IA para PYMES"
+      "description": "Aplicación de fútbol con IA, con vistas dinámicas y una experiencia rica que responde a cualquier consulta del usuario"
     }
   },
   "experience": {
