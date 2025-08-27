@@ -5,6 +5,7 @@ import { Inconsolata } from 'next/font/google';
 import { Toaster } from 'sonner';
 
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import { ThemeProvider } from '@/components/theme-provider';
 import { ToggleLang } from '@/components/toggle-lang';
@@ -74,6 +75,7 @@ export default async function RootLayout({
         richColors
       />
       <Analytics />
+      <SpeedInsights />
     </html>
   );
 }
