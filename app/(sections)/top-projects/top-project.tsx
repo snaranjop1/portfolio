@@ -45,6 +45,7 @@ export function TopProject({
             variant='outline'
             size='icon'
             className='group-hover:bg-primary group-hover:text-primary-foreground p-1 w-6 h-6'
+            aria-label='Open in new tab'
           >
             <ArrowUpRight />
           </Button>
