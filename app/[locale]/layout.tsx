@@ -4,6 +4,8 @@ import { getLocale, getMessages } from 'next-intl/server';
 import { Inconsolata } from 'next/font/google';
 import { Toaster } from 'sonner';
 
+import { Analytics } from '@vercel/analytics/react';
+
 import { ThemeProvider } from '@/components/theme-provider';
 import { ToggleLang } from '@/components/toggle-lang';
 import { ToggleTheme } from '@/components/toggle-theme';
@@ -71,6 +73,7 @@ export default async function RootLayout({
         position='top-center'
         richColors
       />
+      <Analytics />
     </html>
   );
 }
