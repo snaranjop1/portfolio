@@ -69,13 +69,10 @@ export default async function RootLayout({
             </div>
           </ThemeProvider>
         </NextIntlClientProvider>
+        <Toaster position='top-center' />
+        <Analytics />
+        <SpeedInsights />
       </body>
-      <Toaster
-        position='top-center'
-        richColors
-      />
-      <Analytics />
-      <SpeedInsights />
     </html>
   );
 }
