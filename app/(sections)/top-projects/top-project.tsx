@@ -37,8 +37,8 @@ export function TopProject({
             <span className='rounded-full bg-yellow-500 w-2 h-2'></span>
             <span className='rounded-full bg-green-500 w-2 h-2'></span>
           </div>
-          <span className='text-xs rounded-lg bg-muted px-2 py-1 flex-1 flex items-center gap-2'>
-            <Globe className='w-3 h-3' />
+          <span className='text-xs rounded-lg bg-muted px-2 py-1 flex-1 flex items-center gap-2 max-w-[100%] truncate'>
+            <Globe className='w-3 h-3 hidden md:block' />
             {url}
           </span>
           <Button
