@@ -11,7 +11,7 @@
     "age": "{age} years old"
   },
   "presentation": {
-    "text": "Currently, I work as Senior Frontend Developer at <companylink>{company}</companylink> focusing on the continuous improvement of the user experience using {tech}, to build user-friendly and high performance interfaces. In my spare time, I like to dive into anime and comics, catch soccer games, and spend plenty of time playing with <dogs>my dogs</dogs>."
+    "text": "Currently, I work as Senior Frontend Developer at <companylink>{company}</companylink> leading the migration of legacy Dash dashboards to a modern React stack with <tech>Shadcn</tech>, <tech>TanStack Query</tech>, <tech>Zustand</tech>, <tech>Recharts</tech> and <tech>Tailwind</tech> also designing and developing AI-powered frontend features. In my spare time, I like to dive into anime and comics, catch soccer games, and spend plenty of time playing with <dogs>my dogs</dogs>."
   },
   "topProjects": {
     "title": "Top Projects",

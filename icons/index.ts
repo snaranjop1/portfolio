@@ -13,3 +13,5 @@ export { NodejsIcon } from './nodejs';
 export { HtmlIcon } from './html';
 export { CssIcon } from './css';
 export { TypescriptIcon } from './typescript';
+export { ReactQueryIcon } from './react-query';
+export { ZustandIcon } from './zustand';

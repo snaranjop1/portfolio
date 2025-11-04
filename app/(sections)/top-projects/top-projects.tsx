@@ -24,7 +24,7 @@ export function TopProjects() {
     {
       name: 'Cóbralo',
       description: t('project2.description'),
-      url: 'https://cobralo.vercel.app/',
+      url: 'https://cobralo.app/',
       type: 'personal',
       imageSrc: '/cobralo-screenshot.png',
     },

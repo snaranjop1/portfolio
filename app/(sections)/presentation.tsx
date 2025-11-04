@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { Box } from '@/components/box';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
+import { Tech } from './tech-stack/tech';
+
 export function Presentation() {
   const t = useTranslations('presentation');
   return (
@@ -16,12 +18,17 @@ export function Presentation() {
               href='https://yipitdata.com'
               target='_blank'
               rel='noopener noreferrer'
-              className='inline-flex items-center gap-2 hover:scale-[1.01] duration-100 hover:text-primary'
+              className='inline-flex items-center gap-2 hover:scale-[1.01] duration-100 hover:text-primary cursor-pointer font-bold underline'
             >
               {chunks}
             </a>
           ),
-          tech: 'React + MUI + Plotly Dash',
+          tech: (chunks) => (
+            <Tech
+              name={chunks}
+              small
+            />
+          ),
           dogs: (chunks) => (
             <TooltipProvider>
               <Tooltip delayDuration={200}>

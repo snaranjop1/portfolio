@@ -11,7 +11,7 @@
     "age": "{age} años"
   },
   "presentation": {
-    "text": "Actualmente trabajo como Desarrollador Frontend Senior en <companylink>{company}</companylink> enfocándome en la mejora continua de la experiencia de usuario utilizando {tech} para construir interfaces de usuario amigables y de alto rendimiento. En mi tiempo libre, me gusta ver anime y leer cómics, jugar/ver partidos de fútbol, y pasar mucho tiempo jugando con <dogs>mis perros</dogs>."
+    "text": "Actualmente trabajo como Desarrollador Frontend Senior en <companylink>{company}</companylink> liderando la migración de dashboards legacy a un stack React moderno con <tech>Shadcn</tech>, <tech>TanStack Query</tech>, <tech>Zustand</tech>, <tech>Recharts</tech> y <tech>Tailwind</tech> también diseñando y desarrollando features de frontend con IA. En mi tiempo libre, me gusta ver anime y leer cómics, jugar/ver partidos de fútbol, y pasar mucho tiempo jugando con <dogs>mis perros</dogs>."
   },
   "topProjects": {
     "title": "Mi trabajo",
