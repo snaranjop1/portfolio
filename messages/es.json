@@ -1,44 +1,44 @@
 {
   "header": {
-    "title": "Hola! Soy Sergio Naranjo",
-    "subtitle": "Desarrollador Frontend"
+    "title": "¡Hola! Soy Sergio Naranjo",
+    "subtitle": "Senior Frontend Engineer – Orientado a UX y Producto"
   },
   "bio": {
     "description": "Un poco sobre mí",
-    "role": "Desarrollador Frontend Senior",
+    "role": "Senior Frontend Engineer",
     "experience": "{years}+ años de experiencia",
     "location": "Medellín, Colombia 🇨🇴",
     "age": "{age} años"
   },
   "presentation": {
-    "text": "Actualmente trabajo como Desarrollador Frontend Senior en <companylink>{company}</companylink> liderando la migración de dashboards legacy a un stack React moderno con <tech>Shadcn</tech>, <tech>TanStack Query</tech>, <tech>Zustand</tech>, <tech>Recharts</tech> y <tech>Tailwind</tech> también diseñando y desarrollando features de frontend con IA. En mi tiempo libre, me gusta ver anime y leer cómics, jugar/ver partidos de fútbol, y pasar mucho tiempo jugando con <dogs>mis perros</dogs>."
+    "text": "Actualmente trabajo como Senior Frontend Engineer en <companylink>YipitData</companylink>, donde ayudo a transformar flujos de datos complejos en experiencias de producto intuitivas potenciadas por IA. Lidero esfuerzos de modernización del frontend y contribuyo activamente en decisiones de UX, wireframes y diseño de interacción para garantizar soluciones escalables y centradas en el usuario. Fuera del trabajo, me recargo con anime, cómics, fútbol y tiempo con <dogs>mis perros</dogs>."
   },
   "topProjects": {
-    "title": "Mi trabajo",
-    "description": "Los proyectos de los que estoy más orgulloso",
-    "job": "Proyectos profesionales",
+    "title": "Proyectos destacados",
+    "description": "El trabajo del que estoy más orgulloso",
+    "job": "Profesional",
     "personal": "Personal",
-    "inProgress": "En Construcción",
+    "inProgress": "En progreso",
     "project1": {
       "description": "Migración completa del frontend de vistas en Ruby on Rails a React + React Query + MUI + Firebase"
     },
     "project2": {
-      "description": "Una herramienta de facturación minimalista con una interfaz elegante y intuitiva para crear cuentas de cobro profesionales."
+      "description": "Una herramienta de facturación minimalista con una interfaz elegante e intuitiva para crear facturas profesionales."
     },
     "project3": {
-      "description": "Aplicación de fútbol con IA, con vistas dinámicas y una experiencia rica que responde a cualquier consulta del usuario"
+      "description": "App de fútbol potenciada por IA con vistas dinámicas que se adaptan a cualquier consulta del usuario"
     }
   },
   "experience": {
     "title": "Experiencia",
-    "description": "Mi camino profesional a través de los años",
+    "description": "Mi trayectoria profesional a través de los años",
     "current": "Actual"
   },
   "contact": {
-    "title": "Contacto & Media",
-    "description": "Revisa mis redes sociales y contactame",
-    "resume": "Currículum",
-    "emailCopied": "Email copiado al portapapeles!"
+    "title": "Contacto y redes",
+    "description": "No dudes en revisar mis redes sociales y contactarme",
+    "resume": "CV",
+    "emailCopied": "¡Correo copiado al portapapeles!"
   },
   "techStack": {
     "title": "Stack tecnológico",

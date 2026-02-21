@@ -1,17 +1,17 @@
 {
   "header": {
     "title": "Hello there! I'm Sergio Naranjo",
-    "subtitle": "Frontend Developer"
+    "subtitle": "Senior Frontend Engineer – UX & Product Driven"
   },
   "bio": {
     "description": "A little about me",
-    "role": "Senior Frontend Developer",
+    "role": "Senior Frontend Engineer",
     "experience": "{years}+ years of experience",
     "location": "Medellín, Colombia 🇨🇴",
     "age": "{age} years old"
   },
   "presentation": {
-    "text": "Currently, I work as Senior Frontend Developer at <companylink>{company}</companylink> leading the migration of legacy Dash dashboards to a modern React stack with <tech>Shadcn</tech>, <tech>TanStack Query</tech>, <tech>Zustand</tech>, <tech>Recharts</tech> and <tech>Tailwind</tech> also designing and developing AI-powered frontend features. In my spare time, I like to dive into anime and comics, catch soccer games, and spend plenty of time playing with <dogs>my dogs</dogs>."
+    "text": "Currently, I work as a Senior Frontend Engineer at <companylink>YipitData</companylink>, where I help transform complex data workflows into intuitive, AI-powered product experiences. I lead frontend modernization efforts while actively contributing to UX decisions, wireframing, and interaction design to ensure scalable and user-centered solutions. Outside of work, I recharge through anime, comics, soccer, and spending time with <dogs>my dogs</dogs>."
   },
   "topProjects": {
     "title": "Top Projects",
