@@ -51,7 +51,7 @@ export function TopProject({
           </Button>
         </div>
         <div
-          className='w-full h-24 bg-muted rounded-lg relative'
+          className='w-full h-48 bg-muted rounded-lg relative'
           style={{
             backgroundImage: `url(${imageSrc})`,
             backgroundSize: 'cover',
@@ -59,7 +59,7 @@ export function TopProject({
           }}
         >
           <div className='absolute bottom-0 left-0 right-0 p-1.5 backdrop-blur-sm rounded-b-lg bg-background/50'>
-            <div className='text-sm font-semibold flex items-center gap-2'>
+            <div className='text-md font-semibold flex items-center gap-2'>
               {`${name} (${type})`}
               {isInProgress && (
                 <Badge
@@ -70,7 +70,7 @@ export function TopProject({
                 </Badge>
               )}
             </div>
-            <p className='text-[11px] font-light line-clamp-1'>{description}</p>
+            <p className='text-sm font-light'>{description}</p>
           </div>
         </div>
       </div>

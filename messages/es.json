@@ -23,7 +23,7 @@
       "description": "Migración completa del frontend de vistas en Ruby on Rails a React + React Query + MUI + Firebase"
     },
     "project2": {
-      "description": "Una herramienta de facturación minimalista con una interfaz elegante e intuitiva para crear facturas profesionales."
+      "description": "Una herramienta de facturación para crear facturas profesionales."
     },
     "project3": {
       "description": "App de fútbol potenciada por IA con vistas dinámicas que se adaptan a cualquier consulta del usuario"

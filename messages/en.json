@@ -23,7 +23,7 @@
       "description": "Full frontend migration from Ruby on Rails views to React + React Query + MUI + Firebase"
     },
     "project2": {
-      "description": "A minimal invoicing tool that provides a sleek and intuitive interface for creating professional invoices."
+      "description": "A minimal invoicing tool for creating professional invoices."
     },
     "project3": {
       "description": "AI-powered football app with rich, dynamic views that adapt to any user query"
