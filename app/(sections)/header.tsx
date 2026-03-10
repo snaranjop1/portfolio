@@ -11,6 +11,7 @@ export function Header() {
         src='/avatar.png'
         alt='avatar of Sergio Naranjo'
         className='rounded-full w-24 h-24 border-2 object-cover bg-primary border-primary'
+        priority
       />
       <div className='flex flex-col items-center lg:items-start'>
         <h1 className='text-3xl font-extrabold text-center lg:text-left'>{t('title')}</h1>

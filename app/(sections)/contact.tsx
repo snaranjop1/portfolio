@@ -1,6 +1,6 @@
 'use client';
 
-import { Copy, ExternalLink } from 'lucide-react';
+import { Contact as ContactIcon, Copy, ExternalLink } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { toast } from 'sonner';
 
@@ -30,7 +30,7 @@ export function Contact() {
   return (
     <Box
       className='col-span-2'
-      icon='Contact'
+      icon={ContactIcon}
       title={t('title')}
       description={t('description')}
     >

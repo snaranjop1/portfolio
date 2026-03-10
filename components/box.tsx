@@ -1,4 +1,4 @@
-import { LucideIcon, icons } from 'lucide-react';
+import { LucideIcon } from 'lucide-react';
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 
@@ -7,11 +7,10 @@ interface BoxProps {
   title?: string;
   description?: string;
   className?: string;
-  icon?: keyof typeof icons;
+  icon?: LucideIcon;
 }
 
-export function Box({ className, children, icon, title, description }: BoxProps) {
-  const IconComponent: LucideIcon | null = icon ? icons[icon] : null;
+export function Box({ className, children, icon: IconComponent, title, description }: BoxProps) {
   return (
     <Card className={`${className ?? ''} p-4 shadow-lg`}>
       <CardHeader className='mb-1 space-y-0 pb-4'>

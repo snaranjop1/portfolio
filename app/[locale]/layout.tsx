@@ -17,8 +17,100 @@ import '../globals.css';
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Sergio Naranjo',
-  description: 'Senior Frontend Developer',
+  title: {
+    default: 'Sergio Naranjo | Senior Frontend Engineer',
+    template: '%s | Sergio Naranjo',
+  },
+  description:
+    'Senior Frontend Engineer specializing in React, Next.js, and TypeScript. UX & Product driven, building intuitive and performant web applications.',
+  keywords: [
+    'Frontend Engineer',
+    'React',
+    'Next.js',
+    'TypeScript',
+    'UX',
+    'TailwindCSS',
+    'Web Developer',
+    'JavaScript',
+  ],
+  authors: [{ name: 'Sergio Naranjo', url: 'https://naranhack.dev' }],
+  creator: 'Sergio Naranjo',
+  metadataBase: new URL('https://naranhack.dev'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      en: '/en',
+      es: '/es',
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    alternateLocale: 'es_ES',
+    url: 'https://naranhack.dev',
+    siteName: 'Sergio Naranjo Portfolio',
+    title: 'Sergio Naranjo | Senior Frontend Engineer',
+    description:
+      'Senior Frontend Engineer specializing in React, Next.js, and TypeScript. UX & Product driven, building intuitive and performant web applications.',
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Sergio Naranjo Portfolio',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sergio Naranjo | Senior Frontend Engineer',
+    description:
+      'Senior Frontend Engineer specializing in React, Next.js, and TypeScript. UX & Product driven, building intuitive and performant web applications.',
+    images: ['/opengraph-image.png'],
+    creator: '@naranhack',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Sergio Naranjo',
+  jobTitle: 'Senior Frontend Engineer',
+  url: 'https://naranhack.dev',
+  image: 'https://naranhack.dev/avatar.png',
+  sameAs: [
+    'https://github.com/snaranjop1',
+    'https://www.linkedin.com/in/sergionaranjop/',
+    'https://x.com/naranhack',
+  ],
+  knowsAbout: [
+    'React',
+    'Next.js',
+    'TypeScript',
+    'JavaScript',
+    'TailwindCSS',
+    'Node.js',
+    'UX Design',
+    'Frontend Development',
+    'React Query',
+    'Redux',
+    'Zustand',
+    'Firebase',
+    'Supabase',
+    'Material UI',
+    'Figma',
+  ],
 };
 
 export default async function RootLayout({
@@ -34,6 +126,12 @@ export default async function RootLayout({
       lang={locale}
       suppressHydrationWarning
     >
+      <head>
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${inconsolata.className} antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider

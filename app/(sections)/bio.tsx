@@ -1,3 +1,4 @@
+import { Laugh } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { Box } from '@/components/box';
@@ -7,7 +8,7 @@ export function Bio() {
   return (
     <Box
       className='col-span-2 row-span-2'
-      icon='Laugh'
+      icon={Laugh}
       title='Sergio'
       description={t('description')}
     >

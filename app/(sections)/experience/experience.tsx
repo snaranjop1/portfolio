@@ -1,3 +1,4 @@
+import { BriefcaseBusiness } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 
 import { Box } from '@/components/box';
@@ -38,7 +39,7 @@ export function Experience() {
   return (
     <Box
       className='md:col-span-2 lg:col-span-4'
-      icon='BriefcaseBusiness'
+      icon={BriefcaseBusiness}
       title={t('title')}
       description={t('description')}
     >

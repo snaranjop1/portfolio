@@ -4,26 +4,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://naranhack.dev';
   const currentDate = new Date();
 
-  // Main portfolio page in both languages
-  const routes = [
+  const routes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/en`,
       lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
+      changeFrequency: 'monthly',
       priority: 1,
+      alternates: {
+        languages: {
+          en: `${baseUrl}/en`,
+          es: `${baseUrl}/es`,
+        },
+      },
     },
     {
       url: `${baseUrl}/es`,
       lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
+      changeFrequency: 'monthly',
       priority: 1,
+      alternates: {
+        languages: {
+          en: `${baseUrl}/en`,
+          es: `${baseUrl}/es`,
+        },
+      },
     },
-    // Root redirects to default locale
     {
       url: baseUrl,
       lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
+      changeFrequency: 'monthly',
       priority: 1,
+      alternates: {
+        languages: {
+          en: `${baseUrl}/en`,
+          es: `${baseUrl}/es`,
+        },
+      },
     },
   ];
 

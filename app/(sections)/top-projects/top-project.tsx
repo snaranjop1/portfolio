@@ -1,5 +1,6 @@
 import { ArrowUpRight, Globe } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -28,7 +29,7 @@ export function TopProject({
     <a
       target='_blank'
       href={url ?? github ?? '#'}
-      className='flex justify-center group hover:scale-[1.02] transition-all duration-200'
+      className='flex justify-center group hover:scale-[1.02] transition-transform duration-200'
     >
       <div className='border rounded-lg p-1 w-full'>
         <div className='flex items-center p-1.5 gap-2'>
@@ -50,14 +51,14 @@ export function TopProject({
             <ArrowUpRight className='w-3 h-3' />
           </Button>
         </div>
-        <div
-          className='w-full h-48 bg-muted rounded-lg relative'
-          style={{
-            backgroundImage: `url(${imageSrc})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'top center',
-          }}
-        >
+        <div className='w-full h-48 bg-muted rounded-lg relative overflow-hidden'>
+          <Image
+            src={imageSrc}
+            alt={`${name} screenshot`}
+            fill
+            sizes='(max-width: 768px) 100vw, 50vw'
+            className='object-cover object-top'
+          />
           <div className='absolute bottom-0 left-0 right-0 p-1.5 backdrop-blur-sm rounded-b-lg bg-background/50'>
             <div className='text-md font-semibold flex items-center gap-2'>
               {`${name} (${type})`}
