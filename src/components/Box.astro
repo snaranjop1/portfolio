@@ -1,0 +1,47 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { cn } from "../lib/utils";
+
+type LucideIcon = typeof import("@lucide/astro").Mail;
+
+interface Props extends HTMLAttributes<"div"> {
+  title?: string;
+  description?: string;
+  icon?: LucideIcon;
+}
+
+const {
+  title,
+  description,
+  icon: Icon,
+  class: className,
+  ...rest
+} = Astro.props;
+---
+
+<div
+  class={cn(
+    "rounded-lg border border-border bg-card p-4 text-card-foreground shadow-lg",
+    className,
+  )}
+  {...rest}
+>
+  {
+    (Icon || title || description) && (
+      <header class="flex flex-col p-6 mb-1 space-y-1 pb-4">
+        {Icon && (
+          <div class="p-2 mb-4 border border-border w-fit shadow-sm rounded-lg text-muted-foreground">
+            <Icon class="size-4" />
+          </div>
+        )}
+        {title && <h2 class="tracking-tight text-base font-bold">{title}</h2>}
+        {description && (
+          <p class="text-muted-foreground font-normal text-xs">{description}</p>
+        )}
+      </header>
+    )
+  }
+  <div class="p-6 pt-0">
+    <slot />
+  </div>
+</div>

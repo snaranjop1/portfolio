@@ -1,0 +1,52 @@
+export const techIcons: Record<string, string | "recharts" | "tiptap"> = {
+  HTML: "/icons/html.svg",
+  CSS: "/icons/css.svg",
+  JavaScript: "/icons/javascript.svg",
+  TypeScript: "/icons/typescript.svg",
+  React: "/icons/react.svg",
+  "Next.js": "/icons/next.svg",
+  TailwindCSS: "/icons/tailwind.svg",
+  Tailwind: "/icons/tailwind.svg",
+  Zustand: "/icons/zustand.svg",
+  "React Query": "/icons/react-query.svg",
+  "TanStack Query": "/icons/react-query.svg",
+  Redux: "/icons/redux.svg",
+  Shadcn: "/icons/shadcn.svg",
+  "Material UI": "/icons/material-ui.svg",
+  Recharts: "recharts",
+  TipTap: "tiptap",
+  Firebase: "/icons/firebase.svg",
+  Supabase: "/icons/supabase.svg",
+  "Node.js": "/icons/nodejs.svg",
+  Figma: "/icons/figma.svg",
+  Astro: "/icons/astro.svg",
+  Vite: "/icons/vite.svg",
+  Coolify: "/icons/coolify.svg",
+};
+
+export const techStack = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Next.js",
+  "TailwindCSS",
+  "Zustand",
+  "React Query",
+  "Redux",
+  "Shadcn",
+  "Material UI",
+  "Recharts",
+  "Firebase",
+  "Supabase",
+  "Node.js",
+  "Figma",
+  "Astro",
+  "Vite",
+  "Coolify",
+] as const;
+
+export function getTechIcon(name: string) {
+  return techIcons[name];
+}

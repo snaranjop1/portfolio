@@ -1,0 +1,45 @@
+---
+import Box from "../components/Box.astro";
+import { Laugh } from "@lucide/astro";
+import { t, type Lang } from "../i18n";
+
+interface Props {
+  locale: Lang;
+  class: string;
+}
+
+const { class: className, locale } = Astro.props;
+const copy = t(locale).bio;
+---
+
+<Box
+  title={copy.title}
+  description={copy.description}
+  class={className}
+  icon={Laugh}
+>
+  <ul class="list-disc list-inside text-sm space-y-1">
+    <li>{copy.role}</li>
+    <li>
+      {
+        copy.experience.replace(
+          "{years}",
+          (
+            new Date().getFullYear() - new Date("01-01-2020").getFullYear()
+          ).toString(),
+        )
+      }
+    </li>
+    <li>{copy.location}</li>
+    <li>
+      {
+        copy.age.replace(
+          "{age}",
+          (
+            new Date().getFullYear() - new Date("04-14-1999").getFullYear()
+          ).toString(),
+        )
+      }
+    </li>
+  </ul>
+</Box>

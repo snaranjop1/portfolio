@@ -1,0 +1,19 @@
+---
+import { Languages } from "@lucide/astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { localizedPath, otherLocale, type Lang } from "../i18n";
+import LinkButton from "./LinkButton.astro";
+
+interface Props {
+  locale: Lang;
+  label: string;
+}
+
+const { locale, label } = Astro.props;
+const next = otherLocale(locale);
+const href = getRelativeLocaleUrl(next, localizedPath("en", Astro.url.pathname));
+---
+
+<LinkButton href={href} variant="ghost" size="icon" aria-label={label}>
+  <span class="font-semibold text-base">{next.toUpperCase()}</span>
+</LinkButton>

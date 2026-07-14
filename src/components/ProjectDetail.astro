@@ -1,0 +1,122 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { ArrowLeft, ArrowUpRight, FolderGit2 } from "@lucide/astro";
+import LinkButton from "./LinkButton.astro";
+import TechBadge from "./TechBadge.astro";
+import type { Project } from "../data/projects";
+import { t, type Lang } from "../i18n";
+
+interface Props {
+  locale: Lang;
+  project: Project;
+}
+
+const { locale, project } = Astro.props;
+const copy = t(locale).topProjects;
+const item = copy.items[project.slug as keyof typeof copy.items];
+const homeHref = getRelativeLocaleUrl(locale, "/");
+
+const sections = (
+  [
+    { key: "problem", label: copy.problemLabel },
+    { key: "solution", label: copy.solutionLabel },
+    { key: "impact", label: copy.impactLabel },
+  ] as const
+).filter((section) => section.key in item);
+---
+
+<main class="mt-4 flex flex-col gap-6">
+  <LinkButton
+    href={homeHref}
+    variant="ghost"
+    size="sm"
+    class="w-fit text-muted-foreground"
+  >
+    <ArrowLeft class="size-4" />
+    {copy.back}
+  </LinkButton>
+
+  <header class="flex flex-col gap-3">
+    <div class="flex flex-wrap items-center gap-3">
+      <h1 class="text-2xl font-extrabold">{project.name}</h1>
+      <span class="bg-badge px-4 py-2 text-xs font-semibold">
+        {copy[project.type]}
+      </span>
+      {
+        project.isInProgress && (
+          <span class="bg-badge px-4 py-2 text-xs font-semibold">
+            🚧 {copy.inProgress}
+          </span>
+        )
+      }
+    </div>
+    <p class="text-base text-muted-foreground">{item.tagline}</p>
+    <div class="flex flex-wrap gap-2">
+      {
+        project.url && (
+          <LinkButton
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            size="sm"
+          >
+            {copy.visitSite}
+            <ArrowUpRight class="size-4" />
+          </LinkButton>
+        )
+      }
+      {
+        project.github && (
+          <LinkButton
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            size="sm"
+            variant="outline"
+          >
+            <FolderGit2 class="size-4" />
+            {copy.sourceCode}
+          </LinkButton>
+        )
+      }
+    </div>
+  </header>
+
+  {
+    project.imageSrc && (
+      <div class="relative w-full overflow-hidden rounded-lg border border-border bg-muted">
+        <img
+          src={project.imageSrc}
+          alt={`${project.name} screenshot`}
+          class="size-full object-cover object-center"
+        />
+      </div>
+    )
+  }
+
+  <article class="flex flex-col gap-10">
+    {
+      sections.map(({ key, label }) => (
+        <section>
+          <h2 class="mb-2 text-base font-bold">{label}</h2>
+          <p class="leading-relaxed text-sm text-muted-foreground">
+            {item[key as keyof typeof item]}
+          </p>
+        </section>
+      ))
+    }
+
+    {
+      project.stack.length > 0 && (
+        <section>
+          <h2 class="mb-3 text-base font-bold">{copy.stackLabel}</h2>
+          <div class="flex flex-wrap gap-3">
+            {project.stack.map((tech) => (
+              <TechBadge name={tech} />
+            ))}
+          </div>
+        </section>
+      )
+    }
+  </article>
+</main>

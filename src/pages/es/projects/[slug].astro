@@ -1,0 +1,26 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import ProjectDetail from "../../../components/ProjectDetail.astro";
+import { getProject, projects } from "../../../data/projects";
+import { t, type Lang } from "../../../i18n";
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+  }));
+}
+
+const locale = (Astro.currentLocale ?? "es") as Lang;
+const project = getProject(Astro.params.slug!);
+
+if (!project) {
+  return Astro.redirect("/es");
+}
+
+const copy = t(locale).topProjects;
+const item = copy.items[project.slug as keyof typeof copy.items];
+---
+
+<Layout locale={locale} title={project.name} description={item.tagline}>
+  <ProjectDetail locale={locale} project={project} />
+</Layout>

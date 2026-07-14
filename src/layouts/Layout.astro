@@ -1,0 +1,120 @@
+---
+import "../styles/global.css";
+import ThemeToggle from "../components/ThemeToggle.astro";
+import LangToggle from "../components/LangToggle.astro";
+import { SOCIAL } from "../constants";
+import { localizedPath, ogLocale, otherLocale, t, type Lang } from "../i18n";
+
+interface Props {
+  locale: Lang;
+  title?: string;
+  description?: string;
+  image?: string;
+  ogType?: string;
+  isHome?: boolean;
+}
+
+const {
+  locale,
+  title,
+  description,
+  image = "/og-image.png",
+  ogType = "website",
+  isHome = false,
+} = Astro.props;
+
+const copy = t(locale);
+const pageTitle = title ?? copy.homeTitle;
+const metaDescription = description ?? copy.tagline;
+
+const site = Astro.site!;
+const canonical = new URL(Astro.url.pathname, site);
+const ogImage = new URL(image, site);
+const enUrl = new URL(localizedPath("en", Astro.url.pathname), site);
+const esUrl = new URL(localizedPath("es", Astro.url.pathname), site);
+
+const person = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: copy.name,
+  url: site.href,
+  jobTitle: copy.bio.role,
+  image: new URL("/avatar.webp", site).href,
+  sameAs: [SOCIAL.github, SOCIAL.linkedin, SOCIAL.twitter],
+};
+
+const umamiSrc = import.meta.env.PUBLIC_UMAMI_SRC;
+const umamiId = import.meta.env.PUBLIC_UMAMI_ID;
+---
+
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="naranhack" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{pageTitle}</title>
+    <meta name="description" content={metaDescription} />
+    <meta name="author" content={copy.name} />
+    <link rel="canonical" href={canonical} />
+
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="es" href={esUrl} />
+    <link rel="alternate" hreflang="x-default" href={enUrl} />
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={copy.name} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content={ogLocale[locale]} />
+    <meta property="og:locale:alternate" content={ogLocale[otherLocale(locale)]} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:creator" content="@naranhack" />
+
+    {
+      isHome && (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(person)}
+        />
+      )
+    }
+
+    {
+      import.meta.env.PROD && umamiSrc && (
+        <script is:inline defer src={umamiSrc} data-website-id={umamiId} />
+      )
+    }
+
+    <script is:inline>
+      const theme = localStorage.getItem("theme");
+      if (
+        theme === "dark" ||
+        (!theme && matchMedia("(prefers-color-scheme: dark)").matches)
+      )
+        document.documentElement.classList.add("dark");
+    </script>
+  </head>
+  <body
+    class="font-mono antialiased bg-background text-foreground p-5 md:p-10 max-w-5xl container mx-auto flex flex-col"
+  >
+    <header class="flex gap-2 self-end">
+      <LangToggle locale={locale} label={copy.langToggle} />
+      <ThemeToggle label={copy.themeToggle} />
+    </header>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@import "@fontsource/jetbrains-mono";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.7337 0.1822 54.68);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.5045 0.1515 140.48);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.9699 0.0013 106.42);
+  --muted-foreground: oklch(0.5534 0.0116 58.07);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --success: oklch(0.55 0.15 145);
+  --success-foreground: oklch(0.985 0 0);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.7337 0.1822 54.68);
+  --badge: oklch(0.9699 0.0013 106.42);
+}
+
+.dark {
+  --background: oklch(0 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.1448 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.7337 0.1822 54.68);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.6986 0.1515 140.48);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.2178 0 0);
+  --muted-foreground: oklch(0.7161 0.0091 56.26);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --success: oklch(0.65 0.15 145);
+  --success-foreground: oklch(0.145 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.7337 0.1822 54.68);
+  --badge: oklch(0.2685 0.0063 34.3);
+}
+
+@theme inline {
+  --font-mono: "JetBrains Mono", monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-badge: var(--badge);
+}

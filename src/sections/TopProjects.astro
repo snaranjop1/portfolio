@@ -1,0 +1,68 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { ArrowRight, ArrowUpRight, Code } from "@lucide/astro";
+import Box from "../components/Box.astro";
+import LinkButton from "../components/LinkButton.astro";
+import { projects } from "../data/projects";
+import { t, type Lang } from "../i18n";
+
+interface Props {
+  locale: Lang;
+  class?: string;
+}
+
+const { locale, class: className } = Astro.props;
+const copy = t(locale).topProjects;
+---
+
+<Box
+  class={className}
+  icon={Code}
+  title={copy.title}
+  description={copy.description}
+>
+  <div class="my-4 grid w-full grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-1">
+    {
+      projects.map((project) => (
+        <div class="group relative flex flex-col gap-1.5 rounded-lg border border-border p-3 transition-colors hover:border-primary">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-sm font-semibold">{project.name}</span>
+            <span class="px-1.5 py-0.5 text-[10px] bg-badge text-foreground">
+              {copy[project.type]}
+            </span>
+            {project.isInProgress && (
+              <span class="px-1.5 py-0.5 text-[10px] bg-badge text-foreground">
+                🚧 {copy.inProgress}
+              </span>
+            )}
+          </div>
+          <p class="flex-1 text-xs font-light text-muted-foreground">
+            {copy.items[project.slug as keyof typeof copy.items].tagline}
+          </p>
+          <div class="mt-1 flex items-center justify-between gap-2">
+            <a
+              href={getRelativeLocaleUrl(locale, `projects/${project.slug}`)}
+              class="inline-flex items-center gap-1 text-xs font-medium text-primary after:absolute after:inset-0"
+            >
+              {copy.viewDetails}
+              <ArrowRight class="size-3.5 transition-transform group-hover:translate-x-0.5" />
+            </a>
+            {project.url && (
+              <LinkButton
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="secondary"
+                size="sm"
+                class="relative z-10 h-7 px-2 text-xs"
+              >
+                {copy.visitSite}
+                <ArrowUpRight class="size-3.5" />
+              </LinkButton>
+            )}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Box>

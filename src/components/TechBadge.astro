@@ -1,0 +1,32 @@
+---
+import { ChartSpline, SquareDashedText } from "@lucide/astro";
+import { getTechIcon } from "../lib/tech";
+import { cn } from "../lib/utils";
+
+interface Props {
+  name: string;
+  class?: string;
+}
+
+const { name, class: className } = Astro.props;
+const icon = getTechIcon(name);
+---
+
+<div
+  class={cn(
+    "inline-flex items-center gap-2 rounded-md bg-badge font-semibold text-foreground",
+    "px-4 py-2 text-sm",
+    className,
+  )}
+>
+  {
+    icon === "recharts" ? (
+      <ChartSpline class="size-3" />
+    ) : icon === "tiptap" ? (
+      <SquareDashedText class="size-3" />
+    ) : icon ? (
+      <img src={icon} alt="" class="size-3" aria-hidden="true" />
+    ) : null
+  }
+  <span>{name}</span>
+</div>

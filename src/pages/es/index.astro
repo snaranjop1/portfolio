@@ -1,0 +1,17 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Home from "../../components/Home.astro";
+import { t, type Lang } from "../../i18n";
+
+const locale = (Astro.currentLocale ?? "es") as Lang;
+const copy = t(locale);
+---
+
+<Layout
+	locale={locale}
+	title={copy.homeTitle}
+	description={copy.tagline}
+	isHome
+>
+	<Home locale={locale} />
+</Layout>

@@ -1,0 +1,98 @@
+---
+import {
+  CheckCircle2,
+  Contact as ContactIcon,
+  Copy,
+  ExternalLink,
+} from "@lucide/astro";
+import Box from "../components/Box.astro";
+import { EMAIL, SOCIAL } from "../constants";
+import { t, type Lang } from "../i18n";
+
+interface Props {
+  locale: Lang;
+  class?: string;
+}
+
+const { locale, class: className } = Astro.props;
+const copy = t(locale).contact;
+
+const links = [
+  { name: copy.resume, url: SOCIAL.resume },
+  { name: "Github", url: SOCIAL.github },
+  { name: "LinkedIn", url: SOCIAL.linkedin },
+  { name: "Twitter", url: SOCIAL.twitter },
+];
+---
+
+<Box
+  class={className}
+  icon={ContactIcon}
+  title={copy.title}
+  description={copy.description}
+>
+  <div class="flex flex-col gap-2">
+    <button
+      type="button"
+      data-copy-email
+      data-email={EMAIL}
+      data-copied-msg={copy.emailCopied}
+      class="font-semibold underline underline-offset-4 hover:text-primary flex gap-2 items-center w-fit cursor-pointer text-sm"
+    >
+      Email
+      <Copy class="size-3 text-inherit" />
+    </button>
+    {
+      links.map(({ name, url }) => (
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-semibold underline underline-offset-4 hover:text-primary flex gap-2 items-center w-fit text-sm"
+        >
+          {name}
+          <ExternalLink class="size-3 text-inherit" />
+        </a>
+      ))
+    }
+  </div>
+</Box>
+
+<div
+  data-copy-toast
+  class="pointer-events-none fixed top-6 right-6 z-50 flex items-center gap-2 rounded-md border border-success/30 bg-success px-4 py-3 text-xs font-medium text-success-foreground opacity-0 shadow-lg transition-opacity duration-200"
+  role="status"
+  aria-live="polite"
+>
+  <CheckCircle2 class="size-4 shrink-0" />
+  <span data-copy-toast-msg></span>
+</div>
+
+<script>
+  import { celebrateFromTopRight } from "../lib/celebrate";
+
+  document.querySelectorAll("[data-copy-email]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const email = btn.getAttribute("data-email");
+      const message = btn.getAttribute("data-copied-msg");
+      if (!email || !message) return;
+
+      await navigator.clipboard.writeText(email);
+
+      const toast = document.querySelector("[data-copy-toast]");
+      const toastMsg = document.querySelector("[data-copy-toast-msg]");
+      if (!(toast instanceof HTMLElement) || !(toastMsg instanceof HTMLElement))
+        return;
+
+      toastMsg.textContent = message;
+      toast.classList.remove("opacity-0");
+
+      celebrateFromTopRight();
+
+      window.clearTimeout(Number(toast.dataset.timeoutId));
+      toast.dataset.timeoutId = String(
+        window.setTimeout(() => toast.classList.add("opacity-0"), 2500),
+      );
+    });
+  });
+</script>

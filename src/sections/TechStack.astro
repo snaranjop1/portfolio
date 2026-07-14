@@ -1,0 +1,20 @@
+---
+import Box from "../components/Box.astro";
+import TechBadge from "../components/TechBadge.astro";
+import { techStack } from "../lib/tech";
+import { t, type Lang } from "../i18n";
+
+interface Props {
+  locale: Lang;
+  class?: string;
+}
+
+const { locale, class: className } = Astro.props;
+const copy = t(locale).techStack;
+---
+
+<Box class={className} title={copy.title} description={copy.description}>
+  <div class="flex flex-wrap gap-3">
+    {techStack.map((name) => <TechBadge name={name} />)}
+  </div>
+</Box>

@@ -1,0 +1,54 @@
+---
+import { t, type Lang } from "../i18n";
+import Bio from "../sections/Bio.astro";
+import Contact from "../sections/Contact.astro";
+import Experience from "../sections/Experience.astro";
+import Footer from "../sections/Footer.astro";
+import Presentation from "../sections/Presentation.astro";
+import TechStack from "../sections/TechStack.astro";
+import TopProjects from "../sections/TopProjects.astro";
+
+interface Props {
+  locale: Lang;
+}
+
+const { locale } = Astro.props;
+const copy = t(locale);
+---
+
+<main>
+  <div class="mb-6 flex items-center gap-4 p-4">
+    <img
+      src="/avatar.webp"
+      alt={copy.name}
+      width="80"
+      height="80"
+      class="size-20 rounded-full"
+    />
+    <div>
+      <h1 class="text-xl font-bold">{copy.name}</h1>
+      <p class="text-muted-foreground text-sm">{copy.tagline}</p>
+    </div>
+  </div>
+  <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-4 md:grid lg:grid-cols-4 lg:grid-rows-4">
+      <Bio class="col-span-2 row-span-2" locale={locale} />
+      <Presentation
+        class="md:col-span-2 md:row-span-2 md:col-start-3 md:row-start-1 lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-3"
+        locale={locale}
+      />
+      <TopProjects
+        class="md:col-span-4 md:row-span-2 md:col-start-1 md:row-start-3 lg:col-span-2 lg:row-span-4 lg:col-start-3 lg:row-start-1"
+        locale={locale}
+      />
+    </div>
+    <div
+      class="flex flex-col gap-4 md:grid md:grid-cols-4 md:grid-rows-1 lg:grid lg:grid-cols-6 lg:grid-rows-1"
+    >
+      <Experience class="md:col-span-2 lg:col-span-4" locale={locale} />
+      <Contact class="col-span-2" locale={locale} />
+    </div>
+    <TechStack class="col-span-6 row-span-2 row-start-8" locale={locale} />
+  </div>
+  <Footer />
+</main>

@@ -1,0 +1,73 @@
+---
+import { BriefcaseBusiness } from "@lucide/astro";
+import Box from "../components/Box.astro";
+import { t, type Lang } from "../i18n";
+
+interface Props {
+  locale: Lang;
+  class?: string;
+}
+
+const { locale, class: className } = Astro.props;
+const copy = t(locale).experience;
+
+const formatDate = (date: Date) =>
+  new Intl.DateTimeFormat(locale, { month: "short", year: "numeric" }).format(
+    date,
+  );
+
+const jobs = [
+  {
+    name: "YipitData",
+    current: true,
+    dates: `${formatDate(new Date("05/01/2025"))} - ${copy.current}`,
+  },
+  {
+    name: "DataScope",
+    dates: `${formatDate(new Date("03/31/2023"))} - ${formatDate(new Date("06/30/2025"))}`,
+  },
+  {
+    name: "HelloBUILD",
+    dates: `${formatDate(new Date("08/01/2022"))} - ${formatDate(new Date("03/31/2023"))}`,
+  },
+  {
+    name: "Appspring Technologies",
+    dates: `${formatDate(new Date("02/01/2021"))} - ${formatDate(new Date("05/31/2022"))}`,
+  },
+  {
+    name: "ACI Worldwide",
+    dates: `${formatDate(new Date("01/01/2020"))} - ${formatDate(new Date("12/31/2020"))}`,
+  },
+];
+---
+
+<Box
+  class={className}
+  icon={BriefcaseBusiness}
+  title={copy.title}
+  description={copy.description}
+>
+  <div class="flex flex-col gap-5">
+    {
+      jobs.map((job) => (
+        <div class="flex flex-col lg:flex-row lg:justify-between">
+          <h3 class="flex items-center gap-2 lg:gap-4 text-sm">
+            {job.current ? (
+              <span class="relative flex size-2 items-center justify-center">
+                <span class="absolute inline-flex size-3 animate-ping rounded-full bg-primary opacity-75" />
+                <span class="relative inline-flex size-2 rounded-full bg-primary" />
+              </span>
+            ) : (
+              <span class="relative flex size-2 items-center justify-center">
+                <span class="absolute inline-flex size-4 rounded-full bg-muted" />
+                <span class="relative inline-flex size-2 rounded-full bg-muted-foreground" />
+              </span>
+            )}
+            {job.name}
+          </h3>
+          <p class="text-xs">{job.dates}</p>
+        </div>
+      ))
+    }
+  </div>
+</Box>
