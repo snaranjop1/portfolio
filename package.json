@@ -2,9 +2,9 @@
   "name": "portfolio",
   "type": "module",
   "version": "1.0.0",
-  "packageManager": "pnpm@11.11.0",
+  "packageManager": "pnpm@12.16.1",
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=26"
   },
   "scripts": {
     "dev": "astro dev",
